@@ -1,0 +1,49 @@
+<div class = "row">
+  <div class = "col-xs-12">
+    <img [src] = "recipeDetail.imageurl"
+         [alt] = "recipeDetail.name"
+         class = "img-responsive"
+          style = "height: 300px;"
+    />
+  </div>
+</div>
+
+<div class = "row">
+  <div class = "col-xs-12">
+   <h1> {{recipeDetail.name}}</h1>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div  dropdowndirective class="btn-group">
+        <button class = "btn btn-primary dropdown-toggle ">Manage Receipe
+        <span class = "caret"></span>
+        </button>
+        <ul class = "dropdown-menu">
+          <li><a (click) = "addItemToShoppiKart()"> Add Items to the shopping list</a></li>
+          <li><a routerLink="edit">Edit Receipe</a></li>
+          <li><a (click) = "deleteRecipe()">Delete Receipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<div class = "row">
+  <div class = "col-xs-12">{{recipeDetail.description}}</div>
+</div>
+
+<div class = "row">
+  <div class = "col-xs-8">
+  <ul class = "list-group">
+    <li
+      class="list-group-item"
+      *ngFor = "let ingredeint of recipeDetail.ingredeints">
+
+      {{ingredeint.name}} ({{ingredeint.quantity}})
+
+    </li>
+
+  </ul>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+
+ <div class="row">
+
+  <div class="col-xs-12">
+
+    <a class="list-group-item clearfix"
+       routerLinkActive="active"
+       [routerLink] = itemIndex
+       style = "cursor:pointer"
+
+    >
+      <div class="pull-left">
+        <div class="list-group-item-heading">{{receipe.name}}</div>
+        <p class="list-group-item-text"> {{receipe.description}}</p>
+      </div>
+
+      <span class="pull-right">
+
+        <img
+          src={{receipe.imageurl}}
+          alt={{receipe.name}}
+          class="img-responsive"
+          style="max-height:50px;">
+
+      </span>
+    </a>
+  </div>
+
+</div>

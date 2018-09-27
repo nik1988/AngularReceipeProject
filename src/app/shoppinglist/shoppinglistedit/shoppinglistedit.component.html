@@ -1,0 +1,46 @@
+<div class="row" xmlns="http://www.w3.org/1999/html">
+  <div class="col-xs-12">
+
+    <form (ngSubmit) = "addIngredeints(form)" #form = "ngForm">
+      <div class="row">
+        <div class=" col-md-5  form-group">
+          <label>Name</label>
+          <input type="text"
+                 name = "name"
+                 ngModel
+                 class="form-control"
+                 required
+                 >
+        </div>
+        <div class="col-lg-2 form-group">
+          <label>Amount</label>
+          <input type="number"
+                 name = "amount"
+                 ngModel
+                 class="form-control"
+                 required
+                 pattern = "^[1-9]+[0-9]*$"
+                 >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="btn-toolbar">
+            <button class="btn btn-success" type="submit" [disabled]= "!form.valid">
+              {{(editMode ? 'Edit':'Add')}}
+            </button>
+
+            <button  *ngIf = "editMode" class="btn btn-danger"
+                    type="button" (click) = "onDeleteIngredeint()"> Delete</button>
+
+            <button class="btn btn-primary"
+                    type="button" (click) = "onClearIngredeint()"> Clear</button>
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>

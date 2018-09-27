@@ -1,0 +1,19 @@
+
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click) = "openEditPage()"> Receipe Edit</button>
+  </div>
+</div>
+<hr>
+  <div class = "row" >
+
+    <div class = "col-md-5">
+      <app-receipelist *ngFor = "let recipe of receipes;let i = index" [receipe]= recipe [itemIndex] = i ></app-receipelist>
+    </div>
+
+
+    <div class = "col-md-7" >
+        <router-outlet></router-outlet>
+  </div>
+
+</div>
