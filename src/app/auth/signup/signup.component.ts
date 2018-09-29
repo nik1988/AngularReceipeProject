@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
     var password = form.value.password;
 
     this.authService.signUpUser(email,password)
-    
+
 
 }
 

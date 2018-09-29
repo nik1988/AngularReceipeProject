@@ -6,6 +6,7 @@ import {ReceipedetailComponent} from "./receipe/receipedetail/receipedetail.comp
 import {ReceipeStartComponent} from "./receipe/receipe-start/receipe-start.component";
 import {ReceipeeditComponent} from "./receipe/receipeedit/receipeedit.component";
 import {SignupComponent} from "./auth/signup/signup.component";
+import {SigninComponent} from "./auth/signin/signin.component";
 
 
 const appRoute:Routes= [
@@ -21,7 +22,8 @@ const appRoute:Routes= [
    ]
 },
   {path:'',redirectTo:'recipe',pathMatch:'full'}, // path match not sure.
-  {path:'signup',component:SignupComponent}
+  {path:'signup',component:SignupComponent},
+  {path:'signin',component:SigninComponent}
 
 
 
