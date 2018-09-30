@@ -7,17 +7,17 @@ import {ReceipeStartComponent} from "./receipe/receipe-start/receipe-start.compo
 import {ReceipeeditComponent} from "./receipe/receipeedit/receipeedit.component";
 import {SignupComponent} from "./auth/signup/signup.component";
 import {SigninComponent} from "./auth/signin/signin.component";
+import {AuthGuardService} from "./auth/auth-guard.service";
 
 
 const appRoute:Routes= [
 
-
   {path:'shopping',component: ShoppinglistComponent},
   {path:'recipe',component:ReceipeComponent,children:[
       {path:'',component:ReceipeStartComponent},
-      {path:'new',component:ReceipeeditComponent},
+      {path:'new',component:ReceipeeditComponent,canActivate:[AuthGuardService]},
       {path:':id',component:ReceipedetailComponent},
-      {path:':id/edit',component:ReceipeeditComponent}
+      {path:':id/edit',component:ReceipeeditComponent,canActivate:[AuthGuardService]}
 
    ]
 },
