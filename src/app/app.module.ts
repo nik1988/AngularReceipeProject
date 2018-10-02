@@ -2,37 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {headerComponent} from "./header/header.component";
-import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
-import { ShoppinglisteditComponent } from './shoppinglist/shoppinglistedit/shoppinglistedit.component';
 import {ShoppinglistService} from "./shoppinglist/shoppinglist.service";
 import {AppRouterModule} from "./app-router.module";
-import {FormsModule} from "@angular/forms";
 import {RecipeService} from "./receipe/receipe.service";
 import {HttpModule} from "@angular/http";
 import {DataStorageService} from "./shared/data-storage.service";
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
 import {AuthService} from "./auth/auth.service";
 import {AuthGuardService} from "./auth/auth-guard.service";
 import {RecipeModule} from "./recipe.module";
 import {SharedModule} from "./shared/shared.module";
+import {ShoppingListModule} from "./shoppinglist.module";
+import {AuthModule} from "./auth/auth.module";
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     headerComponent,
-    ShoppinglistComponent,
-    ShoppinglisteditComponent,
-    SignupComponent,
-    SigninComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRouterModule,
-    FormsModule,
     HttpModule,
-    RecipeModule, // Custom Feature module
+    // Custom Feature module
+    RecipeModule,
+    ShoppingListModule,
+    AuthModule,
     SharedModule
   ],
   providers: [ShoppinglistService,

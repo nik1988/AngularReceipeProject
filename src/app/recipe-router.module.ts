@@ -13,9 +13,8 @@ const recipeRoutes:Routes = [
       {path:'new',component:ReceipeeditComponent,canActivate:[AuthGuardService]},
       {path:':id',component:ReceipedetailComponent},
       {path:':id/edit',component:ReceipeeditComponent,canActivate:[AuthGuardService]}
-
-    ]
-}
+    ]},
+  {path:'',redirectTo:'recipe',pathMatch:'full'} // path match not sure.
 ]
 @NgModule({
   imports:[RouterModule.forChild(recipeRoutes)], // we must forChild in case routes are part of feature module
