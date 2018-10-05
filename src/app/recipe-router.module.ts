@@ -8,7 +8,7 @@ import {ReceipeeditComponent} from "./receipe/receipeedit/receipeedit.component"
 
 const recipeRoutes:Routes = [
   {
-  path:'recipe',component:ReceipeComponent,children:[
+  path:'',component:ReceipeComponent,children:[
       {path:'',component:ReceipeStartComponent},
       {path:'new',component:ReceipeeditComponent,canActivate:[AuthGuardService]},
       {path:':id',component:ReceipedetailComponent},

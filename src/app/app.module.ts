@@ -9,7 +9,6 @@ import {HttpModule} from "@angular/http";
 import {DataStorageService} from "./shared/data-storage.service";
 import {AuthService} from "./auth/auth.service";
 import {AuthGuardService} from "./auth/auth-guard.service";
-import {RecipeModule} from "./recipe.module";
 import {SharedModule} from "./shared/shared.module";
 import {ShoppingListModule} from "./shoppinglist.module";
 import {AuthModule} from "./auth/auth.module";
@@ -27,7 +26,6 @@ import { HomeComponent } from './home/home.component';
     AppRouterModule,
     HttpModule,
     // Custom Feature module
-    RecipeModule,
     ShoppingListModule,
     AuthModule,
     SharedModule
