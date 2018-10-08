@@ -12,7 +12,9 @@ import {SharedModule} from "./shared/shared.module";
 import {ShoppingListModule} from "./shoppinglist.module";
 import {AuthModule} from "./auth/auth.module";
 import { HomeComponent } from './home/home.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {AuthInterceptor} from "./shared/auth.interceptor";
+import {LoggingInterceptor} from "./shared/logging.interceptor";
 
 
 @NgModule({
@@ -34,7 +36,10 @@ import {HttpClientModule} from "@angular/common/http";
     RecipeService,
     DataStorageService,
      AuthService,
-    AuthGuardService],
+    AuthGuardService,
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:LoggingInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
