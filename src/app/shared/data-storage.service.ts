@@ -30,7 +30,9 @@ saveRecipeData(){
   const req = new HttpRequest("PUT",'https://ng-recipe-book-e54fd.firebaseio.com/recipes.json',
     this.recipeService.getRecipe(),
     {
+    params:new HttpParams().set('auth',this.authService.getToken()),
     reportProgress:true
+
   })
 
   return this.httpClientService.request(req)
@@ -60,7 +62,8 @@ getRecipeData(){
 
 this.httpClientService.get<Receipe[]>('https://ng-recipe-book-e54fd.firebaseio.com/recipes.json',
   {
-      observe:'body'
+      observe:'body',
+      params:new HttpParams().set('auth',this.authService.getToken()),
 }).pipe(map
   (
   (recipes)=>{
